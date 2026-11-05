@@ -13,6 +13,8 @@ Each chapter file follows the same layout for every concept: **Part A** (intuiti
 | [ch5-stress-strain-temperature-yield.md](ch5-stress-strain-temperature-yield.md) | Tensile test, Hooke + Poisson, E–G–ν, ΔV, thermal stresses, strain energy, Tresca and von Mises | 15 |
 | [ch6-torsion.md](ch6-torsion.md) | τ = Tr/J, twist, hollow vs solid, power, gears, indeterminate shafts, combined loading and yield | 26 |
 
+**Word edition:** [ME_F211_Study_Guide_Ch1-6.docx](ME_F211_Study_Guide_Ch1-6.docx) (and a [PDF copy](ME_F211_Study_Guide_Ch1-6.pdf)) has all six chapters in one file, with the original problem figure under every question and worked diagrams (FBDs, truss force maps, SFD/BMD, torque diagrams, Mohr's circles, stress elements).
+
 Math is in LaTeX (`$…$`). It renders on GitHub, in VS Code's Markdown preview, Obsidian and Typora.
 
 > ⚠️ **Scope warning.** The compre papers cover the **whole course**. About **40% of PYQ marks** come from chapters **after** Ch 6 (bending stress σ = My/I, beam deflection and indeterminate beams, curved beams, Euler buckling). Those slides weren't uploaded, so those questions are listed below but not solved here.

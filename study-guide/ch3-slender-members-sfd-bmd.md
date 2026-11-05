@@ -20,7 +20,7 @@ The slides follow **Crandall's** convention, which is **opposite to Gere/Hibbele
 So **$V_{Crandall} = -V_{Gere}$** everywhere, while $M$ is the same. In the slides' picture of "Positive Shear", the arrow is ↓ on the left face and ↑ on the right face.
 In every solution below, V is given in Crandall's convention, the one the slides and examiners use. If you learned from Gere, flip the sign of V.
 
-Quick rule: with Crandall's convention, **$V(x) = -\big(\text{sum of upward forces to the left of the cut}\big)$** and **$M(x) = $ sum of moments, about the cut, of the forces to the left, clockwise positive.**
+Quick rule: with Crandall's convention, **$V(x) = -\big(\text{sum of upward forces to the left of the cut}\big)$** and **$M(x)$ = sum of moments, about the cut, of the forces to the left, clockwise positive.**
 
 ---
 
