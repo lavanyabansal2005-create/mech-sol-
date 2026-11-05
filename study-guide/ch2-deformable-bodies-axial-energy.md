@@ -584,7 +584,7 @@ $$\delta_{BD} = \frac{28\,284(4243)}{491(205\,000)} = 1.192\ \text{mm (lengthens
 
 $$\boxed{v_D = 1.78\ \text{mm}\downarrow,\qquad u_D = 0.092\ \text{mm toward the wall},\qquad |\Delta_D| = 1.78\ \text{mm}}$$
 
-**Check (Castigliano, Q24).** The vertical deflection comes to 1.777 mm, the same ✓.
+**Check (Castigliano, Q22).** The vertical deflection comes to 1.777 mm, the same ✓.
 
 **Exam takeaway.** In a bracket the inclined tie's stretch dominates. **Variation:** "find the angle through which CD rotates", $1.777/3000 = 5.9\times10^{-4}$ rad.
 
@@ -802,7 +802,7 @@ $$\boxed{\delta_v = 3.94\ \text{mm}\downarrow,\qquad \delta_h = 1.00\ \text{mm}\
 #### Q26 (PYQ 2019-20 Compre A Q3(b)) — Curved cantilever: vertical tip deflection by Castigliano *(hard)*
 **Problem.** A quarter-circle cantilever of radius R (circular cross-section) is fixed at A (θ = 0, at the base) and free at B (θ = 90°, at the top), with a vertical load P down at B. Using Castigliano's method, find the vertical deflection of B in terms of P, E, R, A and I. Neglect shear energy.
 
-**Approach.** The internal forces at angle θ come from Ch. 3 Q20: $M = PR\cos\theta$, $N = P\cos\theta$ (compression) and $V = P\sin\theta$. Shear energy is neglected. Use $ds = R\,d\theta$.
+**Approach.** The internal forces at angle θ come from Ch. 3 Q29: $M = PR\cos\theta$, $N = P\cos\theta$ (compression) and $V = P\sin\theta$. Shear energy is neglected. Use $ds = R\,d\theta$.
 
 **Solution.**
 1. *Derivatives:* $\partial M/\partial P = R\cos\theta$ and $\partial N/\partial P = \cos\theta$.
@@ -840,7 +840,7 @@ The shortcut: the net upward pressure force on a half-ring equals p times its **
 **6. Special cases.**
 - The answer depends only on $r/t$, not on the width b.
 - Use the inner radius for a thin ring unless told otherwise; the mean radius differs by t/2r (about 1% here).
-- For a rope, "four turns" means β = 8π, which amplifies tension enormously (Q28).
+- For a rope, "four turns" means β = 8π, which amplifies tension enormously (Q29).
 
 **7. Common traps.**
 - Using the diameter instead of the radius in $pr/t$.

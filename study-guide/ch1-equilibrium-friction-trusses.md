@@ -198,7 +198,7 @@ Whichever set you choose, a 2-D body gives only **three independent** equations.
 
 *(c) Why a 2-D body has only three independent equations.* A rigid body in a plane has three independent ways to move: two translations and one rotation. Each equation of equilibrium forbids one of them. Any further equation, such as moments about a fourth point, is a combination of the first three and adds no information.
 
-**5. Graphical interpretation.** For a three-force body, draw the two known lines of action and mark their intersection K. The third force must pass through K. This gives its direction immediately (lawn roller Q9, rod on a roller Q11). A **force triangle** drawn head-to-tail with the three forces must close. Its geometry gives magnitudes via the sine rule.
+**5. Graphical interpretation.** For a three-force body, draw the two known lines of action and mark their intersection K. The third force must pass through K. This gives its direction immediately (lawn roller Q8, rod on a roller Q11). A **force triangle** drawn head-to-tail with the three forces must close. Its geometry gives magnitudes via the sine rule.
 
 **6. Special cases.**
 - **All forces parallel:** one force equation is trivially satisfied, so only 2 useful equations remain.
@@ -691,7 +691,7 @@ Sketch the deflected shape before calculating; it predicts every sign.
 
 **6. Special cases.**
 - A joint with only two collinear members and no load: equal forces.
-- A load applied directly over a support goes straight into the reaction and causes no member forces (Ch. 2 Q13 bridge).
+- A load applied directly over a support goes straight into the reaction and causes no member forces (Ch. 2 Q20 bridge).
 - Symmetric truss with symmetric load: solve half and mirror.
 
 **7. Common mistakes.**
@@ -873,7 +873,7 @@ $$\boxed{P = 1\ \text{kN}\ (AC \text{ in tension})}$$
 
 **Check.** The top chord of a cantilever truss is in tension ✓.
 
-**Exam takeaway.** "Find the load that gives force X in member Y" is a section question in disguise. **Variation:** the member has a maximum allowable force. Find the largest P for each member and take the smallest (just like Q25).
+**Exam takeaway.** "Find the load that gives force X in member Y" is a section question in disguise. **Variation:** the member has a maximum allowable force. Find the largest P for each member and take the smallest.
 
 ---
 

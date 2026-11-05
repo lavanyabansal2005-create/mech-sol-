@@ -217,7 +217,7 @@ $$\boxed{\text{Sec. 1: } F = 0,\ V = 400\ \text{N},\ M = 60\ \text{N·m};\qquad 
 
 **Check.** The 400 N horizontal force is carried along the beam as tension between A and the arm, and not at all between the arm and the roller ✓.
 
-**Exam takeaway.** An offset horizontal load creates an axial force on one side and a moment jump at the joint. This is the same structure as Q19 (5 kN/m segments + couple). **Variation:** reverse the force direction; every sign flips.
+**Exam takeaway.** An offset horizontal load creates an axial force on one side and a moment jump at the joint. This is the same structure as Q18 (5 kN/m segments + couple). **Variation:** reverse the force direction; every sign flips.
 
 ---
 
@@ -378,7 +378,7 @@ $$\boxed{V = -w_0(L - x),\qquad M = -\frac{w_0(L-x)^2}{2},\qquad |M|_{max} = \fr
 
 **Check.** $dM/dx = w_0(L - x) = -V$ ✓ (Crandall relation).
 
-**Exam takeaway.** Keep whichever segment avoids the reactions; for a cantilever, keep the free end. **Variation:** Crandall 3.12 (Q23) adds a tip load.
+**Exam takeaway.** Keep whichever segment avoids the reactions; for a cantilever, keep the free end. **Variation:** Crandall 3.12 (Q21) adds a tip load.
 
 ---
 
@@ -756,11 +756,11 @@ Resolve into the component along the local axis (axial force and twist) and the 
 
 *(a) Frame moment formula.* For a free end D loaded by $(F_x, F_y)$, the in-plane bending moment at any point (x, y) of a planar frame is
 $$M(x, y) = (x_D - x)F_y - (y_D - y)F_x$$
-One formula covers every straight segment, so you need not redo FBDs for each leg (Q27).
+One formula covers every straight segment, so you need not redo FBDs for each leg (Q28).
 
 *(b) Crandall Example 3.11, quarter-circle pipe with a transverse load (Q26).* At angle θ: $V = -P$, $M_b = Pa\sin\theta$ and $M_t = -Pa(1 - \cos\theta)$.
 
-*(c) Curved cantilever with an in-plane tip load (Q28):* $N = P\cos\theta$, $V = P\sin\theta$ and $M = PR\cos\theta$.
+*(c) Curved cantilever with an in-plane tip load (Q29):* $N = P\cos\theta$, $V = P\sin\theta$ and $M = PR\cos\theta$.
 
 **5. Picture.** For a bent bracket, draw the BMD *on* each member, on the tension side. Joints transmit M unchanged around a rigid corner, but the axial and shear forces swap roles when the member turns 90°.
 

@@ -96,7 +96,7 @@ and similarly for y and z.
 
 **6. Special cases.**
 - *Uniaxial:* $\epsilon_y = -\nu\sigma/E$.
-- *Laterally constrained* (plate between rigid walls, Q7; elastic material in a rigid cavity, Q8): one or two strains are zero, so stresses appear in those directions and the member becomes stiffer.
+- *Laterally constrained* (plate between rigid walls, Q2; elastic material in a rigid cavity, Q8): one or two strains are zero, so stresses appear in those directions and the member becomes stiffer.
 - ν = 0.5: ΔV = 0, constant volume.
 
 **7. Traps.**

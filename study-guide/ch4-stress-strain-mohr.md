@@ -289,7 +289,7 @@ $$\boxed{\sigma_1 = 132,\ \sigma_2 = 28\ \text{MPa},\ \theta_p = 33.7^\circ\ \te
 
 $$\boxed{\text{uniaxial: through O;\quad equal biaxial: a point;\quad } (\sigma_0, -\sigma_0) \equiv \text{pure shear } \tau_0 = \sigma_0}$$
 
-**Exam takeaway.** "σ₀ in x plus −σ₀ in y" is pure shear of σ₀ on 45° planes. It is a favourite one-mark question (see Q16).
+**Exam takeaway.** "σ₀ in x plus −σ₀ in y" is pure shear of σ₀ on 45° planes. It is a favourite one-mark question (see Q14).
 
 ---
 
@@ -442,7 +442,7 @@ $$\boxed{\sigma_x \approx -193,\ \sigma_y \approx -357,\ |\tau_{xy}| \approx 102
 
 **1. Intuition.** A soft-drink can, a gas cylinder, a boiler, a balloon. The wall is thin compared with the radius, so it cannot resist pressure by bending; it does so by stretching like a membrane. A cylinder is stretched twice as hard around its circumference as along its length. That is why an overheated sausage splits lengthwise.
 
-**2. Why it matters.** Pressure vessels, pipes, tanks, filament-wound cases, biological cells (Q24). They provide a ready-made biaxial stress state for Mohr's-circle and Hooke's-law problems (Ch. 5 Crandall 5.12, 5.20), and the ring case appeared in PYQ 2014 Compre A Q11.
+**2. Why it matters.** Pressure vessels, pipes, tanks, filament-wound cases, biological cells (Q23). They provide a ready-made biaxial stress state for Mohr's-circle and Hooke's-law problems (Ch. 5 Crandall 5.12, 5.20), and the ring case appeared in PYQ 2014 Compre A Q11.
 
 **3. Formal treatment.** For a thin wall ($t \ll r$), use cylindrical coordinates (r, θ, z). By symmetry there are no shear stresses on r, θ and z faces, so **r, θ and z are principal directions** (Crandall Prob 4.10). The radial stress varies from −p on the inner surface to 0 on the outer, which is negligible against pr/t, so $\sigma_r \approx 0$.
 
@@ -467,7 +467,7 @@ $$\sigma_z(2\pi rt) = p\pi r^2\ \Rightarrow\ \sigma_z = \frac{pr}{2t}$$
 **6. Special cases.**
 - An open-ended pipe with no axial force has $\sigma_z = 0$: uniaxial hoop stress.
 - A sphere has equal biaxial stress, so its in-plane Mohr's circle is a point; it is the most efficient shape (half the hoop stress of a cylinder of the same r and t).
-- Filament-wound vessels: fibres at ±54.7° to the axis carry closed-end pressure with equal fibre tension (Q23).
+- Filament-wound vessels: fibres at ±54.7° to the axis carry closed-end pressure with equal fibre tension (Q22).
 
 **7. Traps.**
 - Using the diameter instead of the radius.
