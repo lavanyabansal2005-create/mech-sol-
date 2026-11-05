@@ -287,7 +287,7 @@ $$\boxed{\sigma_1 = 132,\ \sigma_2 = 28\ \text{MPa},\ \theta_p = 33.7^\circ\ \te
 3. Equal normal stresses of **opposite** sign: centred at the origin with R = σ₀, identical to the pure-shear circle.
 4. Pure shear ±τ₀: centred at the origin with R = τ₀. Only the positions of X and Y swap between +τ₀ and −τ₀.
 
-$$\boxed{\text{uniaxial: through O;\quad equal biaxial: a point;\quad } (\sigma_0, -\sigma_0) \equiv \text{pure shear } \tau_0 = \sigma_0}$$
+$$\boxed{\text{uniaxial: through O;}\quad \text{equal biaxial: a point;}\quad (\sigma_0, -\sigma_0) \equiv \text{pure shear } \tau_0 = \sigma_0}$$
 
 **Exam takeaway.** "σ₀ in x plus −σ₀ in y" is pure shear of σ₀ on 45° planes. It is a favourite one-mark question (see Q14).
 
@@ -702,7 +702,7 @@ $$\boxed{\gamma_{max} = 1000\times10^{-6}\ \text{rad, on axes at } 45^\circ\ \te
 3. *In-plane* $\gamma_{max} = 2R = 848.5\mu$, on axes at θp ± 45°, i.e. at −22.5° and 67.5°. An element aligned with these axes shrinks equally on both axes by the centre value (−500μ) and loses (or gains) 848.5 μrad of its right angle.
 4. *Absolute (3-D):* in plane strain ε₃ = εz = 0, so $\gamma_{abs} = 0 - (-924.3) = 924.3\mu$, in the plane containing z and the ε₂ direction, on axes at 45° to them.
 
-$$\boxed{\gamma_{in-plane,max} = 848.5\mu\ \text{on axes at } -22.5^\circ\ \&\ 67.5^\circ;\qquad \gamma_{abs,max} = 924.3\mu\ \text{(out of plane)}}$$
+$$\boxed{\gamma_{\text{in-plane, max}} = 848.5\mu\ \text{on axes at } -22.5^\circ \text{ and } 67.5^\circ;\qquad \gamma_{\text{abs, max}} = 924.3\mu\ \text{(out of plane)}}$$
 
 **Exam takeaway.** When both in-plane principal strains have the same sign, the out-of-plane direction wins.
 

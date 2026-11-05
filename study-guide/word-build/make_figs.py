@@ -460,3 +460,159 @@ if want("c6"):
     mohr("c6_q26", -83.2, 0, -21.3, title="Q26 post, point B: σ1 = 5.15, σ2 = −88.4, τmax = 46.8 MPa")
     element("c6_q26e", -83.2, 0, -21.3, title="Q26 stress element at B (x = post axis)")
 print("done")
+
+# =====================================================================  v2 additions
+if want("v2c1"):
+    # Q11 rod on roller: three-force concurrency
+    fig, ax = plt.subplots(figsize=(5.8, 3.8))
+    b = 1.0; th = math.radians(30); x = b / math.cos(th) ** 3
+    B = np.array([0, 0]); A = np.array([b, b * math.tan(th)]); Wp = x * np.array([math.cos(th), math.sin(th)])
+    end = 1.25 * x * np.array([math.cos(th), math.sin(th)])
+    ax.plot([0, 0], [-0.5, 1.6], color=LD, lw=2)
+    for k in range(10):
+        ax.plot([0, -0.08], [-0.5 + 0.2 * k, -0.58 + 0.2 * k], color=LD, lw=0.8)
+    ax.plot([B[0], end[0]], [B[1], end[1]], color=TC, lw=3)
+    ax.add_patch(Circle(A - np.array([0, 0.05]), 0.05, fc="white", ec=LD))
+    K = np.array([x * math.cos(th), 0])
+    arrow(ax, *(B - np.array([0, 0])), *(B + np.array([0.45, 0])), color=CC); ax.text(0.08, -0.12, "N$_B$ (smooth wall)", color=CC, fontsize=8.5)
+    arrow(ax, *Wp, *(Wp + np.array([0, -0.7])), color=LD); ax.text(Wp[0] + 0.04, Wp[1] - 0.55, "W", fontsize=10)
+    nA = np.array([-math.sin(th), math.cos(th)])
+    arrow(ax, *A, *(A + 0.6 * nA), color=TC); ax.text(*(A + 0.65 * nA), "N$_A$ perpendicular to rod", color=TC, fontsize=8.5)
+    for P0, d in ((B, np.array([1, 0])), (Wp, np.array([0, -1])), (A, -nA)):
+        L = np.linalg.norm(K - P0)
+        ax.plot([P0[0], K[0]], [P0[1], K[1]], ":", color=GR)
+    ax.plot(*K, "o", color="#27ae60"); ax.text(K[0] + 0.03, K[1] - 0.14, "K: all three lines meet", color="#1e8449", fontsize=8.5)
+    ax.annotate("", (b, -0.32), (0, -0.32), arrowprops=dict(arrowstyle="<->", color=GR)); ax.text(b / 2, -0.42, "b", ha="center", color=GR)
+    ax.text(0.25, 0.05, "θ", fontsize=10)
+    ax.text(0.55, 1.45, "x = b / cos³θ", fontsize=11, fontweight="bold", color="#1e8449")
+    ax.set_aspect("equal"); ax.axis("off"); ax.margins(0.1)
+    ax.set_title("Crandall 1.21: three-force member (θ = 30° shown)", fontsize=10.5, fontweight="bold", loc="left")
+    save(fig, "c1v_q11")
+    # Q9 forearm FBD
+    fig, ax = plt.subplots(figsize=(6.4, 2.6))
+    ax.add_patch(Rectangle((0, -0.06), 370, 0.12 * 100 / 100 * 1, fc="#f3e3d3", ec=LD))
+    ax.plot([0], [0], "ko")
+    arrow(ax, 40, 0.06, 40, 0.9, color=TC); ax.text(48, 0.62, "F$_m$ = 782 N (muscle)", color=TC, fontsize=9)
+    arrow(ax, 0, 0.9, 0, 0.06, color=CC); ax.text(-6, 0.55, "J = 686 N\n(humerus on ulna)", color=CC, fontsize=9, ha="right")
+    arrow(ax, 105, -0.06, 105, -0.6, color=LD); ax.text(108, -0.55, "16 N", fontsize=9)
+    arrow(ax, 370, -0.06, 370, -0.8, color=LD); ax.text(330, -0.75, "80 N", fontsize=9)
+    ax.text(40, -0.12, "40", ha="center", va="top", fontsize=8, color=GR)
+    for xx, lab in ((105, "105"), (370, "370 mm")):
+        ax.text(xx, 0.12, lab, ha="center", fontsize=8, color=GR)
+    ax.text(-20, -1.08, "moments about the joint:  40 F$_m$ = 80(370) + 16(105)  →  F$_m$ = 782 N", fontsize=8.5)
+    ax.set_xlim(-130, 420); ax.set_ylim(-1.2, 1.1); ax.axis("off")
+    ax.set_title("Crandall 1.42: FBD of the forearm (elbow at 90°)", fontsize=10.5, fontweight="bold", loc="left")
+    save(fig, "c1v_q9")
+    # Q14 in-plane forces on incline
+    fig, ax = plt.subplots(figsize=(4.8, 3.6))
+    arrow(ax, 0, 0, 0, -0.6, color=LD); ax.text(0.03, -0.62, "W sinθ = 0.6W\n(down the slope)", fontsize=8.5, va="top")
+    arrow(ax, 0, 0, 0.4, 0, color=TC); ax.text(0.42, 0.02, "P = 0.4W", color=TC, fontsize=8.5)
+    arrow(ax, 0, 0, 0.4, -0.6, color="#7d3c98"); ax.text(0.42, -0.55, "resultant\n0.721W", color="#7d3c98", fontsize=8.5)
+    arrow(ax, 0, 0, -0.4, 0.6, color=CC); ax.text(-0.75, 0.5, "friction\nμN = μ(0.8W)", color=CC, fontsize=8.5)
+    ax.plot([0], [0], "ks")
+    ax.text(-0.75, -0.95, "view normal to the incline;  μ = 0.721/0.8 = 0.90", fontsize=8.5)
+    ax.set_aspect("equal"); ax.set_xlim(-0.9, 1.0); ax.set_ylim(-1.05, 0.85); ax.axis("off")
+    ax.set_title("Crandall 1.39: forces in the plane of the incline", fontsize=10, fontweight="bold", loc="left")
+    save(fig, "c1v_q14")
+    # Q25 truss 1.31 (W = 1, L = 1)
+    nd = {"A": (0, 1), "B": (1, 1), "C": (2, 1), "E": (0, 0), "D": (1, 0)}
+    mem = [("A", "B"), ("B", "C"), ("E", "D"), ("B", "D"), ("E", "B"), ("D", "C")]
+    f = solve_truss(nd, mem, [("A", "x"), ("A", "y"), ("E", "x"), ("E", "y")], [("C", 0, -1)])
+    truss("c1v_q25", nd, mem, f, [("C", 0, -1)], [("A", "fixedL"), ("E", "fixedL")], "Crandall 1.31: member forces in units of W", unit="W")
+
+if want("v2c2"):
+    # Q13 kinked spring
+    fig, ax = plt.subplots(figsize=(5.4, 3.2))
+    d = np.linspace(0, 0.25, 200); kb, k2 = 1.178e6, 2.552e6
+    P = np.where(d <= 0.08, kb * d, kb * 0.08 + k2 * (d - 0.08)) / 1e3
+    ax.plot(d, P, color=TC, lw=2); ax.plot([0.08], [94.2], "o", color=CC)
+    ax.annotate("kink: aluminium touches\nP = 94.2 kN at δ = 0.08 mm", (0.08, 94.2), xytext=(0.1, 40), fontsize=8.5, arrowprops=dict(arrowstyle="->", color=GR))
+    ax.text(0.02, 60, "brass only\nk = 1.18 MN/mm", fontsize=8.5); ax.text(0.16, 260, "brass + Al\nk = 2.55 MN/mm", fontsize=8.5)
+    ax.set_xlabel("δ (mm)"); ax.set_ylabel("P (kN)"); ax.grid(alpha=0.3)
+    ax.set_title("Crandall 2.14: load–deflection curve with a kink", fontsize=10.5, fontweight="bold", loc="left")
+    save(fig, "c2v_q13")
+    # Q10 two rods, rigid member displaced
+    fig, ax = plt.subplots(figsize=(5.6, 2.8))
+    ax.plot([0, 675], [0, 0], color=GR, lw=6, alpha=0.4)
+    s = 120
+    ax.plot([0, 675], [-0.853 * s, -0.72 * s], color=TC, lw=4)
+    ax.plot([375], [-(0.853 + (0.72 - 0.853) * 375 / 675) * s], "o", color=CC)
+    ax.text(0, -0.853 * s - 18, "0.853 mm", ha="center", fontsize=8.5); ax.text(675, -0.72 * s - 18, "0.720 mm", ha="center", fontsize=8.5)
+    ax.text(375, -0.779 * s + 10, "B: 0.78 mm", ha="center", fontsize=9, color=CC)
+    ax.plot([0, 0], [0, 60], color=LD, lw=2); ax.plot([675, 675], [0, 80], color=LD, lw=2)
+    ax.text(5, 40, "2 m, 625 mm²", fontsize=8); ax.text(560, 60, "2.7 m, 1250 mm²", fontsize=8)
+    ax.set_ylim(-140, 100); ax.axis("off")
+    ax.set_title("Crandall 2.17: displaced rigid member (deflections ×120)", fontsize=10, fontweight="bold", loc="left")
+    save(fig, "c2v_q10")
+    # Q16 three-bar framework forces vs theta
+    th = np.linspace(0, 80, 200); t = np.radians(th)
+    fig, ax = plt.subplots(figsize=(5.4, 3.0))
+    den = 1 + 2 * np.cos(t) ** 3
+    ax.plot(th, 1 / den, label="inner bar N$_i$/F", color=TC); ax.plot(th, np.cos(t) ** 2 / den, label="outer bar N$_o$/F", color=CC)
+    ax.set_xlabel("θ (deg), with A₀ = A"); ax.grid(alpha=0.3); ax.legend(fontsize=8.5)
+    ax.set_title("Crandall 2.12: bar forces vs angle (equal areas)", fontsize=10.5, fontweight="bold", loc="left")
+    save(fig, "c2v_q16")
+    # Q23 truss deflection table figure: reuse member forces from Ch1 Q25 with f^2 L
+    nd = {"P": (0, 1), "Q": (1, 1), "R": (2, 1), "T": (0, 0), "S": (1, 0)}
+    mem = [("P", "Q"), ("Q", "R"), ("T", "S"), ("Q", "S"), ("T", "Q"), ("S", "R")]
+    f = solve_truss(nd, mem, [("P", "x"), ("P", "y"), ("T", "x"), ("T", "y")], [("R", 0, -1)])
+    truss("c2v_q23", nd, mem, f, [("R", 0, -1)], [("P", "fixedL"), ("T", "fixedL")], "Crandall 2.10: f = F/W per member; δ = Σf²L·W/AE = 12.66 WL/AE", unit="W")
+
+if want("v2c3"):
+    beam("c3v_q5a", 1, {0: "fixedL"}, P=[(1, -1)], labels={0: "wall", 1: "W"}, title="Crandall 3.1: cantilever, weight W at the tip (W = 1, L = 1)", unit_F="W", unit_L="L")
+    beam("c3v_q5b", 1, {0: "fixedL"}, P=[(1, -1), (0.7, 1)], labels={0: "wall", 0.7: "", 1: "tip"}, title="Crandall 3.4: P down at the tip, P up at a = 0.3L from it (P = 1, L = 1)", unit_F="P", unit_L="L")
+    beam("c3v_q6", 0.4, {0: "pin", 0.4: "roller"}, C=[(0.25, -60)], labels={0: "A", 0.25: "arm", 0.4: "B"}, title="Crandall 3.14: beam AB carries the arm's 60 N·m clockwise couple", unit_F="N", unit_L="m")
+    beam("c3v_q12", 2, {0: "fixedL"}, W=[(0, 2, -5, -5)], labels={0: "wall", 2: "tip"}, title="Crandall 3.6: cantilever, full UDL (w₀ = 5 kN/m, L = 2 m)")
+    beam("c3v_q13", 3, {0: "pin", 3: "roller"}, W=[(0, 3, 0, -16)], labels={0: "L", 3: "R"}, title="Crandall 3.10: sixty 400 N sandbags (triangular, 24 kN total)")
+    beam("c3v_q14", 1.8, {0: "fixedL"}, W=[(0, 1.8, -42.38, 0)], labels={0: "bed", 1.8: "surface"}, title="Crandall 3.34: dam upright as a cantilever from the river bed (x up from bed)")
+    beam("c3v_q21", 2, {2: "fixedR"}, P=[(0, -1)], W=[(1, 2, -1, -1)], labels={0: "A", 2: "B"}, title="Crandall 3.12: P = 1 kN at A, w₀ = 1 kN/m on the half next to the wall (L = 2 m)")
+    beam("c3v_q23", 1, {0.2071: "pin", 0.7929: "roller"}, W=[(0, 1, -1, -1)], labels={0.2071: "", 0.7929: ""}, title="Crandall 3.25: bookshelf with bricks at 0.207L (w = 1, L = 1): equal ± peaks", unit_F="wL", unit_L="L")
+    fig, ax = plt.subplots(figsize=(5.4, 3.0))
+    th = np.linspace(0, 90, 200); t = np.radians(th)
+    ax.plot(th, np.sin(t), color=TC, label="M$_b$/(Pa) = sin θ"); ax.plot(th, -(1 - np.cos(t)), color=CC, label="M$_t$/(Pa) = −(1 − cos θ)")
+    ax.axhline(0, color=LD, lw=0.7); ax.grid(alpha=0.3); ax.legend(fontsize=8.5); ax.set_xlabel("θ from free end A (deg)")
+    ax.set_title("Crandall Example 3.11: bending and twist in the pipe bend", fontsize=10, fontweight="bold", loc="left")
+    save(fig, "c3v_q26")
+
+if want("v2c4"):
+    mohr("c4v_q9", -120, 50, 100, title="Crandall 4.7(c): σ1 = 96.2, σ2 = −166.2 MPa, θp = 65.2°")
+    mohr("c4v_q10", 105, 21, -56, title="Crandall 4.8: σx = 105 gives σ2 = −7 MPa exactly")
+    mohr("c4v_q11", -15, 75, 0, rot=-30, title="Crandall 4.15: faces a (θ = −30°) and b")
+    mohr("c4v_q12", 13.12, -38.12, 20, title="Crandall 4.28: one of the two solutions (σx = 13.1, σy = −38.1)")
+    element("c4v_q17", 1, 2, 0, title="Closed thin cylinder: wall element", principal=False, figw=3.8, labs={"sx": "σz = pr/2t", "sy": "σθ = pr/t"})
+    mohr("c4v_q20", 20000, 0, 0, rot=30, unit="psi", title="Crandall 4.27(a): σz = 20 ksi, σθ = 0; m at 30°")
+    mohr("c4v_q26", 700, -300, 0, strain=True, unit="μ", sigma3=300, title="Crandall 4.21: three strain circles; γmax = 1000μ",
+         note="largest circle spans ε_I = 700μ to ε_III = −300μ")
+    mohr("c4v_q27", -800, -200, -300, strain=True, unit="μ", sigma3=0, title="Crandall 4.23: in-plane γmax = 848μ; out-of-plane 924μ",
+         note="dashed: circles to ε3 = 0 (plane strain)")
+    mohr("c4v_q29", 100, 900, -300, strain=True, unit="μ", title="Crandall 4.22(a): ε1 = 1000μ, ε2 = 0")
+
+if want("v2c5"):
+    mohr("c5v_q3", 755, -545, 520, strain=True, unit="μ", title="Crandall 5.8: strain circle, ε1 = 937μ, ε2 = −727μ at 19.3°")
+    fig, ax = plt.subplots(figsize=(5.4, 3.0))
+    nu = np.linspace(0, 0.49, 200)
+    ax.plot(nu, 1 / (1 - nu ** 2), label="one lateral direction fixed: 1/(1−ν²)", color=TC)
+    ax.plot(nu, (1 - nu) / ((1 + nu) * (1 - 2 * nu)), label="two lateral directions fixed", color=CC)
+    ax.set_ylim(0.9, 6); ax.set_xlabel("ν"); ax.set_ylabel("stiffness ÷ free-bar stiffness"); ax.grid(alpha=0.3); ax.legend(fontsize=8)
+    ax.axvline(0.3, color=GR, ls=":"); ax.text(0.31, 4.5, "ν = 0.3:\n1.10 and 1.35", fontsize=8.5)
+    ax.set_title("Lateral constraint stiffens a member (Q2, Q8)", fontsize=10.5, fontweight="bold", loc="left")
+    save(fig, "c5v_constraint")
+    fig, ax = plt.subplots(figsize=(5.4, 2.8))
+    dT = np.linspace(0, 100, 200); gap = 1.5; free = 0.0248 * dT
+    ax.plot(25 + dT, np.where(free > gap, (free - gap) / (5.806e-5 + 5.966e-5) / 1e3, 0), color=CC, lw=2)
+    ax.axvline(85.5, color=GR, ls=":"); ax.text(86.5, 1.0, "gap closes\nat 85.5°C", fontsize=8.5)
+    ax.plot([100], [3.06], "o", color=TC); ax.text(92, 3.3, "3.06 kN at 100°C", fontsize=8.5, color=TC)
+    ax.set_xlabel("temperature (°C)"); ax.set_ylabel("compressive force (kN)"); ax.grid(alpha=0.3)
+    ax.set_title("PYQ 2014 T2-Q3: thermo-gate force vs temperature", fontsize=10.5, fontweight="bold", loc="left")
+    save(fig, "c5v_q21")
+
+if want("v2c6"):
+    fig, ax = plt.subplots(figsize=(5.4, 3.0))
+    ri = np.linspace(0, 0.95, 200)
+    ax.plot(ri, 1 - ri ** 4, label="J (torque capacity at same τ)", color=TC)
+    ax.plot(ri, 1 - ri ** 2, label="area (weight)", color=CC)
+    ax.plot(ri, (1 - ri ** 4) / (1 - ri ** 2), label="strength / weight", color="#27ae60")
+    ax.axvline(0.6, color=GR, ls=":"); ax.text(0.61, 1.5, "rᵢ = 0.6R (Q3)", fontsize=8.5)
+    ax.set_xlabel("rᵢ / R (outer radius fixed)"); ax.set_ylabel("hollow ÷ solid"); ax.grid(alpha=0.3); ax.legend(fontsize=8)
+    ax.set_title("Hollow vs solid shafts of the same outer radius", fontsize=10.5, fontweight="bold", loc="left")
+    save(fig, "c6v_hollow")

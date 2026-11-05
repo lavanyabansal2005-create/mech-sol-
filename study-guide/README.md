@@ -2,18 +2,20 @@
 
 Built from the uploaded lecture slides (Ch 1–6), Crandall, Dahl & Lardner *An Introduction to the Mechanics of Solids* (2nd ed., SI), and six previous-year papers (2014-15 Test-1/Test-2/Compre, 2019-20, 2021-22, 2023-24 and 2024-25 Compre).
 
-Each chapter file follows the same layout for every concept: **Part A** (intuition → why it matters → formal treatment and conventions → derivations → picture → special cases → traps → summary box), then **Part B** (solved questions: slides → Crandall → PYQs, easy → hard, with given/asked, approach, solution, boxed answer, sanity check and exam takeaway).
+Each chapter file follows the same layout for every concept: **Part A**, eight numbered items (intuition → why it matters → formal treatment and conventions → derivations → picture → special cases → traps → summary box), then **Part B**, the solved questions (slides → Crandall → PYQs, easy → hard). Every solution uses one template: *Problem · Given/Find (with units) · Approach · FBD in words · numbered steps with every substitution · boxed answer · check (often by a second method) · exam takeaway with a likely variation*.
 
 | File | Topics | Solved Qs |
 |---|---|---|
-| [ch1-equilibrium-friction-trusses.md](ch1-equilibrium-friction-trusses.md) | FBDs, equilibrium, 2- and 3-force members, Coulomb and belt friction, trusses (joints, sections, zero-force members) | 20 |
-| [ch2-deformable-bodies-axial-energy.md](ch2-deformable-bodies-axial-energy.md) | 3-step method, δ = PL/AE, indeterminate bars, displacement diagrams, strain energy, Castigliano | 16 |
-| [ch3-slender-members-sfd-bmd.md](ch3-slender-members-sfd-bmd.md) | Internal F/V/M, SFD and BMD, distributed loads, q–V–M relations, singularity functions, frames, curved and 3-D members | 19 |
-| [ch4-stress-strain-mohr.md](ch4-stress-strain-mohr.md) | Stress tensor, transformation, Mohr's circle, principal and max-shear stresses, strain, strain Mohr's circle, rosettes | 16 |
-| [ch5-stress-strain-temperature-yield.md](ch5-stress-strain-temperature-yield.md) | Tensile test, Hooke + Poisson, E–G–ν, ΔV, thermal stresses, strain energy, Tresca and von Mises | 15 |
-| [ch6-torsion.md](ch6-torsion.md) | τ = Tr/J, twist, hollow vs solid, power, gears, indeterminate shafts, combined loading and yield | 26 |
+| [ch1-equilibrium-friction-trusses.md](ch1-equilibrium-friction-trusses.md) | Procedure, force systems and couples, FBDs, equilibrium, 2- and 3-force members, Coulomb, 3-D and belt friction, trusses (joints, sections, zero-force members) | 26 |
+| [ch2-deformable-bodies-axial-energy.md](ch2-deformable-bodies-axial-energy.md) | 3-step method, springs, δ = PL/AE, composite and indeterminate bars, displacement diagrams, strain energy, Castigliano, rings and belts | 29 |
+| [ch3-slender-members-sfd-bmd.md](ch3-slender-members-sfd-bmd.md) | Internal F/V/M, SFD and BMD, distributed and hydrostatic loads, q–V–M relations, singularity functions, frames, curved and 3-D members | 29 |
+| [ch4-stress-strain-mohr.md](ch4-stress-strain-mohr.md) | Stress tensor, transformation, Mohr's circle, principal and max-shear stresses, thin-walled pressure vessels, strain, strain Mohr's circle, rosettes | 33 |
+| [ch5-stress-strain-temperature-yield.md](ch5-stress-strain-temperature-yield.md) | Tensile test, Hooke + Poisson, constrained members, E–G–ν–K, ΔV, thermal stresses and shrink fits, strain energy, Tresca and von Mises | 25 |
+| [ch6-torsion.md](ch6-torsion.md) | τ = Tr/J, twist, hollow vs solid, power, gears, indeterminate shafts, strain energy, combined loading and yield | 27 |
 
-**Word edition:** [ME_F211_Study_Guide_Ch1-6.docx](ME_F211_Study_Guide_Ch1-6.docx) (and a [PDF copy](ME_F211_Study_Guide_Ch1-6.pdf)) has all six chapters in one file, with the original problem figure under every question and worked diagrams (FBDs, truss force maps, SFD/BMD, torque diagrams, Mohr's circles, stress elements).
+**Word edition:** [ME_F211_Study_Guide_Ch1-6.docx](ME_F211_Study_Guide_Ch1-6.docx) (and a [PDF copy](ME_F211_Study_Guide_Ch1-6.pdf)) has all six chapters in one file (about 250 pages, with a clickable contents page). Each question that has a figure shows the original one (from the slides, the Crandall textbook or the question paper), and most solutions end with a worked diagram (FBDs, truss force maps, SFD/BMD, torque diagrams, Mohr's circles, stress elements).
+
+The textbook problems added in this edition (about 45 more, from Crandall's end-of-chapter sets for Ch 1–5) are labelled *Crandall Prob x.y*. The uploaded textbook PDF stops before Chapter 6's problem set, so Ch 6 uses the slide and PYQ problems.
 
 Math is in LaTeX (`$…$`). It renders on GitHub, in VS Code's Markdown preview, Obsidian and Typora.
 
@@ -66,20 +68,20 @@ Counted across the 7 papers supplied (2014-15 Test-1, Test-2, Compre; 2019-20, 2
 | Rank | Question type | Appearances | Where | Solved in |
 |---|---|---|---|---|
 | 1 | **Euler buckling of columns** (often combined with a beam that loads the column) | 8 | 19 B1, 21 A3, 21 B3, 23 B1, 24 A3, 24 B3, 14 C-A20, 14 C-B4 | *not in Ch 1–6 slides* |
-| 2 | **Torsion of circular shafts** (allowable T, twist, hollow vs solid, gears, fixed–fixed) | 7 | 14 T2-Q4, 14 C-A5, 14 C-B2, 19 B4, 21 A1, 23 A1, 24 B1 | Ch 6 Q12–Q14, Q17, Q18, Q20; Ch 4 Q13 |
+| 2 | **Torsion of circular shafts** (allowable T, twist, hollow vs solid, gears, fixed–fixed) | 7 | 14 T2-Q4, 14 C-A5, 14 C-B2, 19 B4, 21 A1, 23 A1, 24 B1 | Ch 6 Q11–Q13, Q17, Q18, Q20; Ch 4 Q30 |
 | 3 | **Beam deflection / statically indeterminate beams** (integration, singularity functions, settlement, beam + rod) | 7 | 14 C-A9/10/15/16, 19 B3, 21 B2, 21 B3, 23 B3, 24 B3 | *not in Ch 1–6 slides* (SFD/BMD groundwork in Ch 3) |
-| 4 | **Combined loading at a point** (find F, V, M, T at a section → σ, τ on a 2-D element → principal stresses → FS) | 6 | 14 T2-Q1, 19 B2, 21 A2, 21 B4, 23 B2, 24 B2 | Ch 6 Q23–Q26; Ch 4 Q8 |
-| 5 | **Principal stresses / Mohr's circle / transformation** (stand-alone) | 5 | 14 C-A12, 14 C-A13, 14 C-B1, 19 A2, 14 T2-Q2 | Ch 4 Q6–Q9, Q14, Q16 |
-| 5 | **Yield criteria and factor of safety** (Tresca, von Mises) | 5 | 14 C-A3, 14 C-A4, 19 A4, 21 A2c, 24 B2d | Ch 5 Q12–Q15; Ch 6 Q24, Q26 |
-| 5 | **Bending stress / curved beams / eccentric loads** (σ = My/I, T-sections, chain link) | 5 | 14 C-A19, 14 C-B3, 19 A1b, 23 A2, 24 A1 | partly (Ch 3 Q18 uses σ = 32M/πd³); rest *not in slides* |
-| 8 | **Generalized Hooke's law: Δ-dimensions, Δt, ΔV, circle → ellipse** | 4 | 14 C-A2, 21 B1, 23 A3, 24 A2 | Ch 5 Q1–Q3; Ch 4 Q15 |
-| 8 | **SFD/BMD, contraflexure, singularity functions** | 4 papers (6 Qs) | 14 T1-Q4, 14 C-A6/7/14/17/18, 19 A1 | Ch 3 Q4, Q5, Q16–Q18 |
-| 10 | **Strain energy / Castigliano** | 3 | 14 T1-Q2, 19 A3b, 24 B1c | Ch 2 Q11, Q12; Ch 6 Q20 |
-| 11 | **Thermal stresses** | 2 | 14 T2-Q3, 14 C-A1 | Ch 5 Q5, Q11 |
-| 12 | Trusses (sections) · friction + axial (rope on drum) · thin ring · strain gauge/rosette · axial stress ratio | 1 each | 14 T1-Q1, 14 T1-Q3, 14 C-A11, 21 A1, 14 C-A8 | Ch 1 Q20, Q11; Ch 2 Q16, PYQ A-Q8; Ch 4 Q13 |
+| 4 | **Combined loading at a point** (find F, V, M, T at a section → σ, τ on a 2-D element → principal stresses → FS) | 6 | 14 T2-Q1, 19 B2, 21 A2, 21 B4, 23 B2, 24 B2 | Ch 6 Q25–Q27; Ch 4 Q15 (19 B2 and 21 B4 need bending I of box/T sections, so they are not solved) |
+| 5 | **Principal stresses / Mohr's circle / transformation** (stand-alone) | 5 | 14 C-A12, 14 C-A13, 14 C-B1, 19 A2, 14 T2-Q2 | Ch 4 Q13, Q14, Q16, Q31, Q33 |
+| 5 | **Yield criteria and factor of safety** (Tresca, von Mises) | 5 | 14 C-A3, 14 C-A4, 19 A4, 21 A2c, 24 B2d | Ch 5 Q23–Q25; Ch 6 Q25, Q27 |
+| 5 | **Bending stress / curved beams / eccentric loads** (σ = My/I, T-sections, chain link) | 5 | 14 C-A19, 14 C-B3, 19 A1b, 23 A2, 24 A1 | partly (Ch 3 Q28 uses σ = 32M/πd³); rest *not in slides* |
+| 8 | **Generalized Hooke's law: Δ-dimensions, Δt, ΔV, circle → ellipse** | 4 | 14 C-A2, 21 B1, 23 A3, 24 A2 | Ch 5 Q5, Q9, Q10; Ch 4 Q32 |
+| 8 | **SFD/BMD, contraflexure, singularity functions** | 4 papers (6 Qs) | 14 T1-Q4, 14 C-A6/7/14/17/18, 19 A1 | Ch 3 Q7, Q15, Q25, Q27, Q28 |
+| 10 | **Strain energy / Castigliano** | 3 | 14 T1-Q2, 19 A3b, 24 B1c | Ch 2 Q25, Q26; Ch 6 Q20 |
+| 11 | **Thermal stresses** | 2 | 14 T2-Q3, 14 C-A1 | Ch 5 Q12, Q21 |
+| 12 | Trusses (sections) · friction + axial (rope on drum) · thin ring · strain gauge/rosette · axial stress ratio | 1 each | 14 T1-Q1, 14 T1-Q3, 14 C-A11, 21 A1, 14 C-A8 | Ch 1 Q26, Q16; Ch 2 Q28, Q11; Ch 4 Q30 |
 
 **What this tells you for the compre:**
-1. **Combined loading + Mohr + yield** shows up in every recent Part B (2019, 2021, 2023, 2024), worth 18–20 marks each time. Practise the 6-step procedure in Ch 6 Concept 6.5 until it's automatic.
+1. **Combined loading + Mohr + yield** shows up in every recent Part B (2019, 2021, 2023, 2024), worth 18–20 marks each time. Practise the 6-step procedure in Ch 6 Concept 6.6 until it's automatic.
 2. **Torsion** appears in nearly every paper, usually as one clean 10–12 mark question (fixed–fixed shaft, gear pair, or allowable T + twist).
 3. **Hooke's-law plate questions** (Δt, ΔV, etched circle) are a near-certain 10 marks in Part A (2021, 2023, 2024).
 4. **Buckling and beam deflection** together are the biggest block, and they are **outside** these slides. Study them next.
@@ -106,7 +108,7 @@ Counted across the 7 papers supplied (2014-15 Test-1, Test-2, Compre; 2019-20, 2
 |---|---|---|
 | 2014-15 Compre A | Q9, Q10 (cantilever tip deflection/slope), Q15–16 (propped cantilever), Q19 (bending/shear ratio), Q20 (buckling) | Ch 7 (bending), Ch 8 (deflection), Ch 9 (buckling) |
 | 2014-15 Compre B | Q3 (inverted-T beam stresses), Q4 (buckling from deflection data) | Ch 7, Ch 9 |
-| 2019-20 | A-Q1(b) (partly done in Ch 3 Q18), B-Q1 (two columns), B-Q2 (box-beam combined loading needs I and Q of a box section), B-Q3 (beam + rod, 4th-order ODE) | Ch 7–9 |
+| 2019-20 | A-Q1(b) (partly done in Ch 3 Q28), B-Q1 (two columns), B-Q2 (box-beam combined loading needs I and Q of a box section), B-Q3 (beam + rod, 4th-order ODE) | Ch 7–9 |
 | 2021-22 | A-Q3, B-Q2, B-Q3, B-Q4 | Ch 7–9 |
 | 2023-24 | A-Q2 (eccentric pull on a post), B-Q1 (spreader buckling), B-Q3 (singularity deflection with settlement) | Ch 7–9 |
 | 2024-25 | A-Q1 (curved chain link), A-Q3, B-Q3 | Ch 7–9 |

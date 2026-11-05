@@ -30,4 +30,5 @@ open('word/document.xml','w').write(d)
 print('updateFields' in s)
 PY
 python3 -c "p='[Content_Types].xml';s=open(p).read();s=s.replace('<Default Extension=\"xml\"','<Default Extension=\"png\" ContentType=\"image/png\"/><Default Extension=\"jpg\" ContentType=\"image/jpeg\"/><Default Extension=\"xml\"',1) if 'Extension=\"png\"' not in s else s;open(p,'w').write(s)"
+python3 ../fixxml.py
 rm -f ../guide.docx && zip -qrX ../guide.docx . && cd ..

@@ -166,7 +166,7 @@ $$\boxed{b = \frac{k_3\,a}{\dfrac{k_1k_2}{k_1+k_2}+k_3},\qquad \delta = \frac{P}
 
 ---
 
-## Concept 2.2 — Uniaxial loading: $\delta = PL/AE$ and bars with several segments
+## Concept 2.2 — Uniaxial loading: δ = PL/AE and bars with several segments
 
 ### A. Concept explanation
 
